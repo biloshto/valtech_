@@ -1,0 +1,27 @@
+@import "../../../resources/_variables";
+@import "../../../resources/_mixins";
+
+:host {
+  .row-container;
+
+  section {
+    h1 {
+      margin-bottom: 5.25rem;
+    }
+
+    .teasers-wrapper {
+      .row-container;
+
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+
+  @media @l-devices {
+    section {
+      h1 {
+        margin-bottom: 3.75rem;
+      }
+    }
+  }
+}

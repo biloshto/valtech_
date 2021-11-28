@@ -1,0 +1,55 @@
+<section id="contactForm">
+  <h1>Section four</h1>
+  <div class="contact-form-wrapper">
+    <div class="row">
+      <div class="col-12 uppercase header">Contact us</div>
+    </div>
+
+    <div class="row">
+      <div class="col-5">
+        <app-input-field
+          [id]="'firstName'"
+          [label]="'First Name'"
+        ></app-input-field>
+      </div>
+      <div class="col-2"></div>
+      <div class="col-5">
+        <app-input-field
+          [id]="'lastName'"
+          [label]="'Last Name'"
+        ></app-input-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-5">
+        <app-input-field
+          [id]="'emailAddress'"
+          [type]="'email'"
+          [label]="'Email Address'"
+        ></app-input-field>
+      </div>
+      <div class="col-2"></div>
+      <div class="col-5">
+        <app-input-field
+          [id]="'phoneNumber'"
+          [type]="'number'"
+          [label]="'Phone Number'"
+        ></app-input-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-5">
+        <app-textarea-field
+          [id]="'yourMessage'"
+          [label]="'Your Message'"
+        ></app-textarea-field>
+      </div>
+
+      <div class="col-3"></div>
+
+      <button class="col-4 uppercase" type="submit">Send</button>
+    </div>
+  </div>
+</section>

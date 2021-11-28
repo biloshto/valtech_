@@ -1,0 +1,13 @@
+<article>
+  <img [attr.src]="'../../../assets/img/' + teaser?.img" alt="Teaser" />
+
+  <div class="teaser-content">
+    <div>
+      <h2>{{ teaser?.title }}</h2>
+
+      <p>{{ teaser?.text }}</p>
+    </div>
+
+    <button type="button">Read more</button>
+  </div>
+</article>

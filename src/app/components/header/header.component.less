@@ -1,0 +1,124 @@
+@import "../../../resources/_variables";
+@import "../../../resources/_mixins";
+
+:host {
+  .row-container;
+
+  align-items: center;
+  justify-content: space-between;
+  background: @white-color 0% 0% no-repeat padding-box;
+  padding: 1.063rem 15%;
+
+  img {
+    content: url("../../../assets/img/Valtech-Logo-black.png");
+    width: 37.14%;
+    height: auto;
+    max-width: 16.625rem;
+  }
+
+  nav {
+    .column-container;
+
+    align-items: center;
+    justify-content: center;
+
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9998;
+    background-color: @accent-color;
+
+    a {
+      .ease-in;
+
+      display: block;
+      text-align: center;
+      font: normal normal normal 2rem/2.438rem Helvetica Neue;
+      letter-spacing: 0;
+      color: @gray-color;
+      cursor: pointer;
+
+      &:not(:last-of-type) {
+        margin-bottom: 1.25rem;
+      }
+
+      &:active,
+      &.active {
+        .ease-out;
+
+        color: @white-color;
+      }
+    }
+  }
+
+  @media @l-devices {
+    padding: 1.063rem 7%;
+
+    img {
+      content: url("../../../assets/img/Valtech-Logo-black@2x.png");
+      width: 13.43%;
+    }
+
+    nav {
+      .row-container;
+
+      height: 100%;
+      width: auto;
+      position: initial;
+      background-color: transparent;
+
+      a {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        margin: 0 0.5rem;
+        font: normal normal normal 1rem/1.25rem Helvetica Neue;
+        position: relative;
+
+        &:not(:last-of-type) {
+          margin-bottom: 0;
+        }
+
+        &:after {
+          .ease-in;
+
+          display: block;
+          content: "";
+          position: absolute;
+          left: 50%;
+          bottom: -1.688rem;
+          transform: translate(-50%, 0);
+          width: 0;
+          height: 0.313rem;
+          background: @accent-color 0% 0% no-repeat padding-box;
+          opacity: 0;
+        }
+
+        &:active,
+        &.active {
+          color: @accent-color;
+
+          &:after {
+            .ease-out;
+
+            width: 2.813rem;
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  @media @xl-devices {
+    nav {
+      a {
+        margin: 0 0.938rem;
+        font: normal normal normal 1.125rem/1.375rem Helvetica Neue;
+      }
+    }
+  }
+}

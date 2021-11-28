@@ -1,0 +1,4 @@
+<div class="search-field-wrapper" [ngClass]="{ filter: theme === 'filter' }">
+  <input type="text" [placeholder]="placeholder" (input)="onInput($event)" />
+  <button type="button" class="uppercase">{{ buttonText }}</button>
+</div>

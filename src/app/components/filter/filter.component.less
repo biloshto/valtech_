@@ -1,0 +1,38 @@
+@import "../../../resources/_variables";
+@import "../../../resources/_mixins";
+
+:host {
+  .row-container;
+
+  section {
+    background: @accent-color 0% 0% no-repeat padding-box;
+
+    h1 {
+      margin-bottom: 5.25rem;
+    }
+
+    .filter-wrapper {
+      .row-container;
+
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      width: 70.61%;
+      width: (70.61% + (2 * @section-padding-s));
+      margin: 0 auto;
+    }
+  }
+
+  @media @l-devices {
+    section {
+      h1 {
+        margin-bottom: 3.75rem;
+      }
+
+      .filter-wrapper {
+        width: 54.95%;
+        width: calc(54.95% + (2 * @section-padding));
+      }
+    }
+  }
+}

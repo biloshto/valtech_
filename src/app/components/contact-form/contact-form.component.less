@@ -1,0 +1,96 @@
+@import "../../../resources/_variables";
+@import "../../../resources/_mixins";
+
+:host {
+  section {
+    width: 100%;
+    background: url("../../../assets/img/Intersection 1.png") no-repeat center
+      center;
+    background-size: cover;
+
+    h1 {
+      margin-bottom: 5.25rem;
+      color: @white-color;
+    }
+
+    .contact-form-wrapper {
+      .column-container;
+
+      align-items: center;
+      justify-content: center;
+
+      width: calc(70.61% + (2 * @section-padding-s));
+      background-color: rgba(255, 255, 255, 0.78);
+      border-radius: 0.938rem;
+      padding: 2.5rem 3rem;
+      margin: 0 auto;
+
+      .row {
+        &:not(:last-of-type) {
+          .col-4 {
+            margin-bottom: 2.375rem;
+          }
+        }
+        .col-5 {
+          margin-bottom: 2.375rem;
+        }
+
+        .header {
+          font: normal normal normal 1.5rem/1.813rem Helvetica Neue;
+          letter-spacing: 0;
+          color: @black-color;
+
+          margin-bottom: 2.375rem;
+        }
+
+        button {
+          .active-state-btn;
+
+          align-self: flex-end;
+
+          height: 3.125rem;
+          max-width: 12.5rem;
+          margin-left: auto;
+          background: @black-color 0% 0% no-repeat padding-box;
+          border-radius: 0.938rem;
+
+          font: normal normal normal 1.125rem/1.375rem Helvetica Neue;
+          letter-spacing: 0;
+          color: @white-color;
+        }
+      }
+    }
+  }
+
+  @media @l-devices {
+    section {
+      h1 {
+        margin-bottom: 3.75rem;
+      }
+
+      .contact-form-wrapper {
+        width: calc(41.01% + (2 * @section-padding));
+        padding: 2.5rem 3.75rem;
+
+        .row {
+          &:not(:last-of-type) {
+            .col-4,
+            .col-5 {
+              margin-bottom: 1.875rem;
+            }
+          }
+
+          &:last-of-type {
+            .col-5 {
+              margin-bottom: 0;
+            }
+          }
+
+          .header {
+            margin-bottom: 1.875rem;
+          }
+        }
+      }
+    }
+  }
+}

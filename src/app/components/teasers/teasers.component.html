@@ -1,0 +1,12 @@
+<section id="teasers">
+  <h1>Section three</h1>
+
+  <div class="teasers-wrapper">
+    <app-teaser
+      *ngFor="let teaser of teasers; let i = index; trackBy: trackByIdx"
+      [teaser]="teaser"
+      class="col-5"
+    >
+    </app-teaser>
+  </div>
+</section>

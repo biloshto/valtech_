@@ -1,0 +1,22 @@
+<img alt="Valtech Logo" />
+
+<nav *ngIf="menuVisible">
+  <a
+    *ngFor="let item of menuItems; let i = index; trackBy: trackByIdx"
+    class="uppercase"
+    [ngClass]="{ active: item.isActive }"
+    (click)="setActive(i)"
+  >
+    {{ item.text }}
+  </a>
+</nav>
+
+<app-search-field
+  *ngIf="onLargeDevice; else showHamburgerIcon"
+></app-search-field>
+<ng-template #showHamburgerIcon>
+  <app-hamburger-icon
+    [bitten]="menuVisible"
+    (bittenEmitter)="toggleMenu($event)"
+  ></app-hamburger-icon>
+</ng-template>

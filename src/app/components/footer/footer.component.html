@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-3">
+    <img src="../../../assets/img/Valtech-Logo-black.png" alt="Valtech Logo" />
+  </div>
+
+  <div
+    *ngFor="
+      let section of [1, 2, 3];
+      let i = index;
+      let last = last;
+      trackBy: trackByIdx
+    "
+    class="col-3"
+    [ngClass]="{ 'half-the-width': !last }"
+  >
+    <h4>Footer Section Title</h4>
+    <nav>
+      <a *ngFor="let link of navLinks; let i = index; trackBy: trackByIdx">{{
+        link
+      }}</a>
+    </nav>
+  </div>
+</div>

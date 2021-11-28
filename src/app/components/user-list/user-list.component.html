@@ -1,0 +1,50 @@
+<h2>Users ({{ users?.length ?? 0 }})</h2>
+
+<app-search-field
+  [theme]="'filter'"
+  [placeholder]="'Filter users'"
+  [buttonText]="'Filter'"
+  (onInputEmitter)="onInputEmitted($event)"
+></app-search-field>
+
+<app-checkbox-field
+  [id]="'sortByAge'"
+  [checked]="sortByAge"
+  [label]="'Sort by Age'"
+  (checkedEmitter)="onSortByAge($event)"
+></app-checkbox-field>
+
+<div class="user-list">
+  <ng-container *ngIf="users?.length; else showMessage">
+    <div
+      *ngFor="let user of users; let i = index; trackBy: trackByUserId"
+      class="row user roll-down-anim"
+      [ngStyle]="{ 'animation-delay': (i + 1) / 8 + 's', 'z-index': 9995 - i }"
+      (click)="showUserDetails(user)"
+    >
+      <div class="col-2">
+        <img [src]="user.img" alt="User image" />
+      </div>
+
+      <div class="col-10">
+        <div class="name">
+          <span class="last">{{ user.lastName }}</span>
+          <span class="placeholder">&nbsp;</span>
+          <span class="first">{{ user.firstName }}</span>
+        </div>
+        <span class="age">{{ user.age }}</span>
+      </div>
+
+      <div class="click-me">Click Me!</div>
+    </div>
+  </ng-container>
+  <ng-template #showMessage>
+    <h1 class="no-results">Sorry, no results found! :-(</h1>
+  </ng-template>
+</div>
+
+<app-about-user
+  *ngIf="user"
+  [user]="user"
+  (onOverlayClickEmitter)="showUserDetails(null)"
+></app-about-user>
